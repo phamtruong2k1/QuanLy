@@ -3,12 +3,14 @@ package com.student.manager.database;
 import android.content.Context;
 import android.database.Cursor;
 
-public class DatabaseUtil {
+import com.student.manager.util.Constant;
+
+public class DatabaseDAO {
 
     public static AppDataBase dataBase;
 
     public static void init(Context context){
-        dataBase = new AppDataBase(context , "sudoku.sqlite" , null , 1);
+        dataBase = new AppDataBase(context , Constant.NAME_DATABASE , null , 1);
     }
 
     public static boolean checkPass(Context context, String tk, String mk) {
