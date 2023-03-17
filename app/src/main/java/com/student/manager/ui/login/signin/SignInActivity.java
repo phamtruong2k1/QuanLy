@@ -2,22 +2,19 @@ package com.student.manager.ui.login.signin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.student.manager.R;
 import com.student.manager.dao.AccountDAO;
-import com.student.manager.databinding.ActivitySignInBinding;
 import com.student.manager.model.Account;
 import com.student.manager.util.Constant;
 import com.student.manager.view.admin.home.AdminActivity;
 import com.student.manager.view.all.CreateAccountActivity;
 import com.student.manager.view.lecturer.LecturerActivity;
 import com.student.manager.view.staff.StaffActivity;
-import com.student.manager.view.student.StudentActivity;
+import com.student.manager.view.student.home.StudentActivity;
 
 public class SignInActivity extends AppCompatActivity {
 
