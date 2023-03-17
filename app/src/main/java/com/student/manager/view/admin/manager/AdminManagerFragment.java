@@ -9,9 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.student.manager.R;
 import com.student.manager.databinding.FragmentAdminManagerBinding;
-import com.student.manager.view.admin.create.CreateStaffActivity;
 import com.student.manager.view.all.CreateAccountActivity;
 
 public class AdminManagerFragment extends Fragment {

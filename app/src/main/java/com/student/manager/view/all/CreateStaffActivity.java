@@ -1,4 +1,4 @@
-package com.student.manager.view.admin.create;
+package com.student.manager.view.all;
 
 import androidx.appcompat.app.AppCompatActivity;
 
