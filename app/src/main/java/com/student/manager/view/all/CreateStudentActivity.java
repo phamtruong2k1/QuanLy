@@ -13,6 +13,7 @@ import com.student.manager.dao.AccountDAO;
 import com.student.manager.dao.StudentDAO;
 import com.student.manager.databinding.ActivityCreateStudentBinding;
 import com.student.manager.model.Student;
+import com.student.manager.util.DataUtil;
 
 public class CreateStudentActivity extends AppCompatActivity {
 
@@ -75,7 +76,7 @@ public class CreateStudentActivity extends AppCompatActivity {
                             binding.edtAddress.getText().toString().trim(),
                             binding.edtPhone.getText().toString().trim(),
                             1,
-                            "",
+                            DataUtil.getDate(),
                             1
                     );
                     StudentDAO.insertStudent(student);

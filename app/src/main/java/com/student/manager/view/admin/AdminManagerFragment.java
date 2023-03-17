@@ -1,4 +1,4 @@
-package com.student.manager.view.admin.manager;
+package com.student.manager.view.admin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 import com.student.manager.dao.StaffDAO;
 import com.student.manager.databinding.FragmentAdminManagerBinding;
 import com.student.manager.model.Staff;
+import com.student.manager.view.admin.ClickStaff;
+import com.student.manager.view.admin.ManagerStaffAdapter;
 import com.student.manager.view.all.CreateAccountActivity;
 
 import java.util.ArrayList;

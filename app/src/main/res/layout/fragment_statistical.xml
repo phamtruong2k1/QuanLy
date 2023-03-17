@@ -19,17 +19,156 @@
         android:textSize="28dp"
         android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcyList"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:scrollbars="none"
-        android:overScrollMode="never"
-        android:nestedScrollingEnabled="false"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="1"/>
+        android:layout_height="wrap_content"
+        android:text="In Month"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="22dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Number of student registered per month:"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/txtNumberMonth1"
+            android:layout_width="80dp"
+            android:text="100"
+            android:gravity="center_vertical|right"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Number of courses sold:"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/txtNumberMonth2"
+            android:layout_width="80dp"
+            android:text="100"
+            android:gravity="center_vertical|right"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Total monthly revenue:"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/txtNumberMonth3"
+            android:layout_width="80dp"
+            android:text="100"
+            android:gravity="center_vertical|right"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="In Year"
+        android:layout_marginTop="45dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="22dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Number of student registered per year:"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/txtNumberYear1"
+            android:layout_width="80dp"
+            android:text="100"
+            android:gravity="center_vertical|right"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Number of courses sold:"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/txtNumberYear2"
+            android:layout_width="80dp"
+            android:text="100"
+            android:gravity="center_vertical|right"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Total yearly revenue:"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/txtNumberYear3"
+            android:layout_width="80dp"
+            android:text="100"
+            android:gravity="center_vertical|right"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
 
 </LinearLayout>

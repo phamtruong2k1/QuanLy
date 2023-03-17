@@ -36,4 +36,29 @@ public class SaveUtil {
     }
 
 
+    public static void setRememberAcc(Boolean data) {
+        sharedPreferences.edit().putBoolean("remember_acc", data).apply();
+    }
+
+    public static Boolean isRememberAcc() {
+        return sharedPreferences.getBoolean("remember_acc", false);
+    }
+
+    public static void setRememberUserName(String data) {
+        sharedPreferences.edit().putString("remember_user_name", data).apply();
+    }
+
+    public static String getRememberUserName() {
+        return sharedPreferences.getString("remember_user_name", "");
+    }
+
+    public static void setRememberPassword(String data) {
+        sharedPreferences.edit().putString("remember_password", data).apply();
+    }
+
+    public static String getRememberPassword() {
+        return sharedPreferences.getString("remember_password", "");
+    }
+
+
 }

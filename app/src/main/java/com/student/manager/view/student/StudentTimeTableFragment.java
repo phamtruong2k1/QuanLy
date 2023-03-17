@@ -1,4 +1,4 @@
-package com.student.manager.view.student.timetable;
+package com.student.manager.view.student;
 
 import android.os.Bundle;
 

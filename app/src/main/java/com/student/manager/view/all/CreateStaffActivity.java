@@ -15,6 +15,7 @@ import com.student.manager.databinding.ActivityCreateStaffBinding;
 import com.student.manager.databinding.ActivityCreateStudentBinding;
 import com.student.manager.model.Staff;
 import com.student.manager.model.Student;
+import com.student.manager.util.DataUtil;
 
 public class CreateStaffActivity extends AppCompatActivity {
 
@@ -74,7 +75,7 @@ public class CreateStaffActivity extends AppCompatActivity {
                             binding.edtDateOfBirth.getText().toString().trim(),
                             binding.edtAddress.getText().toString().trim(),
                             binding.edtPhone.getText().toString().trim(),
-                            "",
+                            DataUtil.getDate(),
                             1
                     );
                     StaffDAO.insertStaff(staff);

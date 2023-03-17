@@ -1,5 +1,6 @@
-package com.student.manager.view.admin.statistical;
+package com.student.manager.view.admin;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.student.manager.R;
+import com.student.manager.databinding.FragmentAdminManagerBinding;
 import com.student.manager.databinding.FragmentStatisticalBinding;
+import com.student.manager.view.all.CreateAccountActivity;
 
 public class StatisticalFragment extends Fragment {
 
@@ -25,6 +28,18 @@ public class StatisticalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_statistical, container, false);
+        binding = FragmentStatisticalBinding.inflate(inflater, container, false);
+
+        return binding.getRoot();
+    }
+
+    private void initData() {
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initData();
     }
 }

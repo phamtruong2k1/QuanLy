@@ -1,4 +1,4 @@
-package com.student.manager.view.student.classlist;
+package com.student.manager.view.student;
 
 import android.os.Bundle;
 

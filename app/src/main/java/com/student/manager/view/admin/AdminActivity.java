@@ -1,4 +1,4 @@
-package com.student.manager.view.student.home;
+package com.student.manager.view.admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,23 +11,17 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.student.manager.R;
-import com.student.manager.databinding.ActivitySignInBinding;
-import com.student.manager.databinding.ActivityStudentBinding;
-import com.student.manager.view.admin.manager.AdminManagerFragment;
-import com.student.manager.view.admin.statistical.StatisticalFragment;
-import com.student.manager.view.student.classlist.StudentClassListFragment;
-import com.student.manager.view.student.noti.StudentNotificationFragment;
-import com.student.manager.view.student.profile.StudentProfileFragment;
-import com.student.manager.view.student.timetable.StudentTimeTableFragment;
+import com.student.manager.databinding.ActivityAdminBinding;
 
-public class StudentActivity extends AppCompatActivity {
+public class AdminActivity extends AppCompatActivity {
 
-    ActivityStudentBinding binding;
+
+    ActivityAdminBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityStudentBinding.inflate(getLayoutInflater());
+        binding = ActivityAdminBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         getSupportFragmentManager()
@@ -40,28 +34,16 @@ public class StudentActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.navigation_time_table:
+                    case R.id.navigation_thong_ke:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frame_container, new StudentTimeTableFragment(), "TimeTable")
+                                .replace(R.id.frame_container, new StatisticalFragment(), "StatisticalFragment")
                                 .commit();
                         break;
-                    case R.id.navigation_class_list:
+                    case R.id.navigation_admin_manager:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frame_container, new StudentClassListFragment(), "ClassList")
-                                .commit();
-                        break;
-                    case R.id.navigation_noti:
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.frame_container, new StudentNotificationFragment(), "Notification")
-                                .commit();
-                        break;
-                    case R.id.navigation_profile:
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.frame_container, new StudentProfileFragment(), "Profile")
+                                .replace(R.id.frame_container, new AdminManagerFragment(), "AdminManagerFragment")
                                 .commit();
                         break;
                 }

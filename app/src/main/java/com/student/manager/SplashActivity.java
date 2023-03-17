@@ -1,17 +1,14 @@
-package com.student.manager.ui.splash;
+package com.student.manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.student.manager.R;
 import com.student.manager.databinding.ActivitySplashBinding;
-import com.student.manager.ui.login.signin.SignInActivity;
-import com.student.manager.ui.main.MainActivity;
+import com.student.manager.view.login.signin.SignInActivity;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {

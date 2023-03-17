@@ -1,4 +1,4 @@
-package com.student.manager.ui.login.signin;
+package com.student.manager.view.login.signin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,11 +11,12 @@ import com.student.manager.dao.AccountDAO;
 import com.student.manager.databinding.ActivitySignInBinding;
 import com.student.manager.model.Account;
 import com.student.manager.util.Constant;
-import com.student.manager.view.admin.home.AdminActivity;
+import com.student.manager.util.SaveUtil;
+import com.student.manager.view.admin.AdminActivity;
 import com.student.manager.view.all.CreateAccountActivity;
 import com.student.manager.view.lecturer.LecturerActivity;
 import com.student.manager.view.staff.StaffActivity;
-import com.student.manager.view.student.home.StudentActivity;
+import com.student.manager.view.student.StudentActivity;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -33,6 +34,11 @@ public class SignInActivity extends AppCompatActivity {
 
     private void initData() {
 
+        if (SaveUtil.isRememberAcc()) {
+            binding.edtTaiKhoan.setText(SaveUtil.getRememberUserName());
+            binding.edtMatKhau.setText(SaveUtil.getRememberPassword());
+            binding.cbRemember.setChecked(true);
+        }
     }
 
     private void initView() {
@@ -40,6 +46,12 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void initListener() {
+        binding.cbRemember.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SaveUtil.setRememberAcc(binding.cbRemember.isChecked());
+            }
+        });
         binding.btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,6 +115,8 @@ public class SignInActivity extends AppCompatActivity {
                 intent = new Intent(SignInActivity.this, StudentActivity.class);
                 break;
         }
+        SaveUtil.setRememberUserName(account.getUser_name());
+        SaveUtil.setRememberPassword(account.getPassword());
         Toast.makeText(this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         finish();
