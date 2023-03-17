@@ -1,4 +1,4 @@
-package com.student.manager.view.all;
+package com.student.manager.view.all.user;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

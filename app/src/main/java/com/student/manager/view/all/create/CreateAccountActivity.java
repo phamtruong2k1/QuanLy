@@ -1,4 +1,4 @@
-package com.student.manager.view.all;
+package com.student.manager.view.all.create;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,6 @@ import com.student.manager.dao.AccountDAO;
 import com.student.manager.databinding.ActivityCreateAccountBinding;
 import com.student.manager.model.Account;
 import com.student.manager.util.Constant;
-import com.student.manager.view.lecturer.LecturerActivity;
 
 public class CreateAccountActivity extends AppCompatActivity {
 

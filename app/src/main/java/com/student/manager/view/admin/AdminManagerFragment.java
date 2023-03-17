@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 import com.student.manager.dao.StaffDAO;
 import com.student.manager.databinding.FragmentAdminManagerBinding;
 import com.student.manager.model.Staff;
-import com.student.manager.view.admin.ClickStaff;
-import com.student.manager.view.admin.ManagerStaffAdapter;
-import com.student.manager.view.all.CreateAccountActivity;
+import com.student.manager.view.all.create.CreateAccountActivity;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.student.manager.view.all;
+package com.student.manager.view.all.create;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,17 +9,14 @@ import android.widget.Toast;
 
 import com.student.manager.R;
 import com.student.manager.dao.AccountDAO;
-import com.student.manager.dao.StaffDAO;
 import com.student.manager.dao.StudentDAO;
-import com.student.manager.databinding.ActivityCreateStaffBinding;
 import com.student.manager.databinding.ActivityCreateStudentBinding;
-import com.student.manager.model.Staff;
 import com.student.manager.model.Student;
 import com.student.manager.util.DataUtil;
 
-public class CreateStaffActivity extends AppCompatActivity {
+public class CreateStudentActivity extends AppCompatActivity {
 
-    ActivityCreateStaffBinding binding;
+    ActivityCreateStudentBinding binding;
 
     int accountId;
     int gender = 1;
@@ -27,11 +24,13 @@ public class CreateStaffActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityCreateStaffBinding.inflate(getLayoutInflater());
+        binding = ActivityCreateStudentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        
         initData();
         initView();
         initListener();
+        
     }
 
     private void initListener() {
@@ -59,15 +58,15 @@ public class CreateStaffActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (binding.edtName.getText().toString().trim().equals("")) {
-                    Toast.makeText(CreateStaffActivity.this, "Enter Name!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateStudentActivity.this, "Enter Name!", Toast.LENGTH_SHORT).show();
                 } else if (binding.edtDateOfBirth.getText().toString().trim().equals("")) {
-                    Toast.makeText(CreateStaffActivity.this, "Enter Date Of Birth!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateStudentActivity.this, "Enter Date Of Birth!", Toast.LENGTH_SHORT).show();
                 } else if (binding.edtAddress.getText().toString().trim().equals("")) {
-                    Toast.makeText(CreateStaffActivity.this, "Enter Address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateStudentActivity.this, "Enter Address!", Toast.LENGTH_SHORT).show();
                 } else if (binding.edtPhone.getText().toString().trim().equals("")) {
-                    Toast.makeText(CreateStaffActivity.this, "Enter Phone!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateStudentActivity.this, "Enter Phone!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Staff staff = new Staff(
+                    Student student = new Student(
                             0,
                             accountId,
                             binding.edtName.getText().toString().trim(),
@@ -75,10 +74,11 @@ public class CreateStaffActivity extends AppCompatActivity {
                             binding.edtDateOfBirth.getText().toString().trim(),
                             binding.edtAddress.getText().toString().trim(),
                             binding.edtPhone.getText().toString().trim(),
+                            1,
                             DataUtil.getDate(),
                             1
                     );
-                    StaffDAO.insertStaff(staff);
+                    StudentDAO.insertStudent(student);
                     finish();
                 }
             }
@@ -99,5 +99,4 @@ public class CreateStaffActivity extends AppCompatActivity {
         super.onBackPressed();
         AccountDAO.deleteAccount(accountId);
     }
-
 }

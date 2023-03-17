@@ -14,10 +14,7 @@ import com.student.manager.R;
 import com.student.manager.dao.StaffDAO;
 import com.student.manager.databinding.ActivityStaffBinding;
 import com.student.manager.model.Staff;
-import com.student.manager.view.student.StudentClassListFragment;
-import com.student.manager.view.student.StudentNotificationFragment;
-import com.student.manager.view.student.StudentProfileFragment;
-import com.student.manager.view.student.StudentTimeTableFragment;
+import com.student.manager.view.all.classroom.ClassroomFragment;
 
 public class StaffActivity extends AppCompatActivity {
 
@@ -35,7 +32,7 @@ public class StaffActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.frame_container, new StaffManagerFragment(staff), "StatisticalFragment")
+                .replace(R.id.frame_container, new StaffManagerFragment(staff), "StaffManager")
                 .commit();
 
         binding.navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -46,19 +43,19 @@ public class StaffActivity extends AppCompatActivity {
                     case R.id.navigation_manager:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frame_container, new StaffManagerFragment(staff), "TimeTable")
+                                .replace(R.id.frame_container, new StaffManagerFragment(staff), "StaffManager")
                                 .commit();
                         break;
                     case R.id.navigation_noti:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frame_container, new StaffNotiFragment(), "Notification")
+                                .replace(R.id.frame_container, new ClassroomFragment(), "Classroom")
                                 .commit();
                         break;
                     case R.id.navigation_profile:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frame_container, new StaffProfileFragment(staff), "Profile")
+                                .replace(R.id.frame_container, new StaffProfileFragment(staff), "StaffProfile")
                                 .commit();
                         break;
                 }

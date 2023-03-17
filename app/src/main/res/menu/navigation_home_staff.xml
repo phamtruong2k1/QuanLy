@@ -7,8 +7,8 @@
 
     <item
         android:id="@+id/navigation_noti"
-        android:icon="@drawable/ic_baseline_notifications_24"
-        android:title="Notification" />
+        android:icon="@drawable/ic_baseline_list_24"
+        android:title="Class" />
 
     <item
         android:id="@+id/navigation_profile"

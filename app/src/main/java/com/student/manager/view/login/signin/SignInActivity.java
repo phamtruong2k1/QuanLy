@@ -13,7 +13,7 @@ import com.student.manager.model.Account;
 import com.student.manager.util.Constant;
 import com.student.manager.util.SaveUtil;
 import com.student.manager.view.admin.AdminActivity;
-import com.student.manager.view.all.CreateAccountActivity;
+import com.student.manager.view.all.create.CreateAccountActivity;
 import com.student.manager.view.lecturer.LecturerActivity;
 import com.student.manager.view.staff.StaffActivity;
 import com.student.manager.view.student.StudentActivity;

@@ -1,4 +1,4 @@
-package com.student.manager.view.all;
+package com.student.manager.view.all.user;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.student.manager.R;
 import com.student.manager.model.Lecturer;
-import com.student.manager.model.Student;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.student.manager.view.all;
+package com.student.manager.view.all.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import com.student.manager.dao.StudentDAO;
 import com.student.manager.databinding.ActivityShowListUserBinding;
 import com.student.manager.model.Lecturer;
 import com.student.manager.model.Student;
-import com.student.manager.view.admin.ManagerStaffAdapter;
+import com.student.manager.view.all.create.CreateAccountActivity;
 
 import java.util.ArrayList;
 import java.util.Objects;

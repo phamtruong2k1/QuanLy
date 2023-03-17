@@ -1,4 +1,4 @@
-package com.student.manager.view.all;
+package com.student.manager.view.all.create;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,11 +10,8 @@ import android.widget.Toast;
 import com.student.manager.R;
 import com.student.manager.dao.AccountDAO;
 import com.student.manager.dao.LecturerDAO;
-import com.student.manager.dao.StaffDAO;
 import com.student.manager.databinding.ActivityCreateLecturerBinding;
-import com.student.manager.databinding.ActivityCreateStaffBinding;
 import com.student.manager.model.Lecturer;
-import com.student.manager.model.Staff;
 import com.student.manager.util.DataUtil;
 
 public class CreateLecturerActivity extends AppCompatActivity {

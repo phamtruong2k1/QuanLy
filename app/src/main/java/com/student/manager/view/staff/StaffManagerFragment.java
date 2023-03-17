@@ -9,12 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.student.manager.R;
-import com.student.manager.databinding.FragmentAdminManagerBinding;
 import com.student.manager.databinding.FragmentStaffManagerBinding;
 import com.student.manager.model.Staff;
-import com.student.manager.view.all.CreateAccountActivity;
-import com.student.manager.view.all.ShowListUserActivity;
+import com.student.manager.view.all.user.ShowListUserActivity;
 
 public class StaffManagerFragment extends Fragment {
 
