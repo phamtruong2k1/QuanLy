@@ -4,7 +4,7 @@ public class Lecturer {
     int lecturer_id;
     int accountId;
     String name;
-    boolean gender;
+    int gender;
     String date_of_birth;
     String address;
     String phone_number;
@@ -14,7 +14,7 @@ public class Lecturer {
     public Lecturer() {
     }
 
-    public Lecturer(int lecturer_id, int accountId, String name, boolean gender, String date_of_birth, String address, String phone_number, String date_of_join, int status) {
+    public Lecturer(int lecturer_id, int accountId, String name, int gender, String date_of_birth, String address, String phone_number, String date_of_join, int status) {
         this.lecturer_id = lecturer_id;
         this.accountId = accountId;
         this.name = name;
@@ -50,11 +50,11 @@ public class Lecturer {
         this.name = name;
     }
 
-    public boolean isGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 

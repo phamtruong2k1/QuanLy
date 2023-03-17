@@ -118,6 +118,7 @@ public class SignInActivity extends AppCompatActivity {
         SaveUtil.setRememberUserName(account.getUser_name());
         SaveUtil.setRememberPassword(account.getPassword());
         Toast.makeText(this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
+        intent.putExtra("accountId", account.getAccountId());
         startActivity(intent);
         finish();
     }

@@ -7,6 +7,8 @@ import com.student.manager.database.AppDataBase;
 import com.student.manager.model.Student;
 import com.student.manager.util.Constant;
 
+import java.util.ArrayList;
+
 public class StudentDAO {
 
     public static AppDataBase dataBase;
@@ -46,6 +48,27 @@ public class StudentDAO {
                     );
         }
         return null;
+    }
+
+    public static ArrayList<Student> getListStudent() {
+        String query = "SELECT * FROM Student" ;
+        Cursor data = dataBase.GetData(query);
+        ArrayList<Student> list = new ArrayList<>();
+        while (data.moveToNext()){
+            list.add(new Student(
+                    data.getInt(0),
+                    data.getInt(1),
+                    data.getString(2),
+                    data.getInt(3),
+                    data.getString(4),
+                    data.getString(5),
+                    data.getString(6),
+                    data.getInt(7),
+                    data.getString(8),
+                    data.getInt(9)
+                    ));
+        }
+        return list;
     }
 
     public static void insertStudent(Student student) {

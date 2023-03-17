@@ -11,7 +11,9 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.student.manager.R;
+import com.student.manager.dao.StaffDAO;
 import com.student.manager.databinding.ActivityStaffBinding;
+import com.student.manager.model.Staff;
 import com.student.manager.view.student.StudentClassListFragment;
 import com.student.manager.view.student.StudentNotificationFragment;
 import com.student.manager.view.student.StudentProfileFragment;
@@ -21,15 +23,19 @@ public class StaffActivity extends AppCompatActivity {
 
     ActivityStaffBinding binding;
 
+    Staff staff;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityStaffBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        initData();
+
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.frame_container, new StudentTimeTableFragment(), "StatisticalFragment")
+                .replace(R.id.frame_container, new StaffManagerFragment(staff), "StatisticalFragment")
                 .commit();
 
         binding.navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -37,28 +43,22 @@ public class StaffActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.navigation_time_table:
+                    case R.id.navigation_manager:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frame_container, new StudentTimeTableFragment(), "TimeTable")
-                                .commit();
-                        break;
-                    case R.id.navigation_class_list:
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.frame_container, new StudentClassListFragment(), "ClassList")
+                                .replace(R.id.frame_container, new StaffManagerFragment(staff), "TimeTable")
                                 .commit();
                         break;
                     case R.id.navigation_noti:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frame_container, new StudentNotificationFragment(), "Notification")
+                                .replace(R.id.frame_container, new StaffNotiFragment(), "Notification")
                                 .commit();
                         break;
                     case R.id.navigation_profile:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frame_container, new StudentProfileFragment(), "Profile")
+                                .replace(R.id.frame_container, new StaffProfileFragment(staff), "Profile")
                                 .commit();
                         break;
                 }
@@ -68,6 +68,12 @@ public class StaffActivity extends AppCompatActivity {
 
 
     }
+
+    private void initData() {
+        int accountId = getIntent().getIntExtra("accountId", 0);
+        staff = StaffDAO.getStaff(accountId);
+    }
+
 
     private boolean clickBack = false;
     @Override
