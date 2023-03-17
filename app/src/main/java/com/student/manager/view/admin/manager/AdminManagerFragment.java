@@ -8,18 +8,27 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
+import com.student.manager.dao.StaffDAO;
 import com.student.manager.databinding.FragmentAdminManagerBinding;
+import com.student.manager.model.Staff;
 import com.student.manager.view.all.CreateAccountActivity;
 
-public class AdminManagerFragment extends Fragment {
+import java.util.ArrayList;
+
+public class AdminManagerFragment extends Fragment implements ClickStaff {
 
 
     FragmentAdminManagerBinding binding;
 
+    ManagerStaffAdapter adapter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        adapter = new ManagerStaffAdapter(requireContext(), new ArrayList<>() , this );
 
     }
 
@@ -37,6 +46,19 @@ public class AdminManagerFragment extends Fragment {
             }
         });
 
+        binding.rcyList.setAdapter(adapter);
+
         return binding.getRoot();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.setData(StaffDAO.getListStaff());
+    }
+
+    @Override
+    public void clickStaff(Staff staff) {
+
     }
 }

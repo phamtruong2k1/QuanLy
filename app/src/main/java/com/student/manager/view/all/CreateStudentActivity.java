@@ -18,8 +18,6 @@ public class CreateStudentActivity extends AppCompatActivity {
 
     ActivityCreateStudentBinding binding;
 
-    String roleAccount;
-
     int accountId;
     int gender = 1;
 

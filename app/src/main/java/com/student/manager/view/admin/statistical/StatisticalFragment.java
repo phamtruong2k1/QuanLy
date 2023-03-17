@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.student.manager.R;
+import com.student.manager.databinding.FragmentStatisticalBinding;
 
 public class StatisticalFragment extends Fragment {
 
+    FragmentStatisticalBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

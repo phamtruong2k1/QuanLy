@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.student.manager.dao.AccountDAO;
+import com.student.manager.databinding.ActivitySignInBinding;
 import com.student.manager.model.Account;
 import com.student.manager.util.Constant;
 import com.student.manager.view.admin.home.AdminActivity;
