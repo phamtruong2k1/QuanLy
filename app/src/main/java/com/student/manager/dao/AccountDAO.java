@@ -17,12 +17,12 @@ public class AccountDAO {
                 "accountId INTEGER PRIMARY KEY AUTOINCREMENT , " +
                 "user_name VARCHAR(1000),  " +
                 "password VARCHAR(1000),  " +
-                "role VARCHAR(1000)    " +
+                "role VARCHAR(1000),    " +
                 "email VARCHAR(1000)    " +
                 ") ");
     }
 
-    public Account login(String username, String password) {
+    public static Account login(String username, String password) {
         String query = "SELECT * FROM Account WHERE user_name = '"+username+"' AND password= '"+password+"'";
         Cursor data = dataBase.GetData(query);
         while (data.moveToNext()){
@@ -35,6 +35,10 @@ public class AccountDAO {
                     );
         }
         return null;
+    }
+
+    public static void deleteAccount(int id) {
+        dataBase.QueryData(" DELETE FROM Account WHERE accountId = " + id +"" );
     }
 
 }

@@ -10,6 +10,7 @@ import android.os.Handler;
 
 import com.student.manager.R;
 import com.student.manager.databinding.ActivitySplashBinding;
+import com.student.manager.ui.login.signin.SignInActivity;
 import com.student.manager.ui.main.MainActivity;
 
 @SuppressLint("CustomSplashScreen")
@@ -26,8 +27,9 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, SignInActivity.class);
                 startActivity(intent);
+                finish();
             }
         }, 1500L);
 

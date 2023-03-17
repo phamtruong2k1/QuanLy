@@ -15,7 +15,15 @@
         android:theme="@style/Theme.QuanLy"
         tools:targetApi="31">
         <activity
-            android:name=".view.admin.AdminActivity"
+            android:name=".view.all.CreateAccountActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.admin.create.CreateStaffActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.admin.home.AdminActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
