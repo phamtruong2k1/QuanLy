@@ -18,6 +18,7 @@
         android:textSize="17dp"
         android:textColor="@color/black"
         android:textStyle="bold"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -26,13 +27,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Name:"
+            android:text="Course:"
             android:textSize="17dp"
             android:textColor="@color/black"
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/txtTypeName"
+            android:id="@+id/txtCourse"
             android:paddingLeft="8dp"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -50,13 +51,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Level:"
+            android:text="Lecturer:"
             android:textSize="17dp"
             android:textColor="@color/black"
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/txtLevel"
+            android:id="@+id/txtLecturer"
             android:paddingLeft="8dp"
             android:layout_width="0dp"
             android:layout_weight="1"

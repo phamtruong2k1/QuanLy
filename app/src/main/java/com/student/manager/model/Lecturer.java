@@ -97,4 +97,9 @@ public class Lecturer {
     public void setStatus(int status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return name + " - ID: " +lecturer_id;
+    }
 }

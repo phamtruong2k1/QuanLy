@@ -122,7 +122,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_btn_log_in"
         android:layout_gravity="center"
-        android:text="Detail"
+        android:text="Edit"
         android:textColor="@color/white"
         android:textStyle="bold" />
 

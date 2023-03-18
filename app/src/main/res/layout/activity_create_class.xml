@@ -52,59 +52,76 @@
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/txtDateOfBirth"
+                android:id="@+id/txtCourse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
-                android:text="Date of birth"
+                android:text="Course"
                 android:textColor="@color/black"
                 android:textSize="14dp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edtDateOfBirth"
+            <Spinner
+                android:id="@+id/spCourse"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginBottom="12dp"
-                android:hint="Date of birth"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/txtAddress"
+                android:id="@+id/txtLecturer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
-                android:text="Address"
+                android:text="Lecturer"
                 android:textColor="@color/black"
                 android:textSize="14dp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edtAddress"
+            <Spinner
+                android:id="@+id/spLecturer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginBottom="12dp"
-                android:hint="Address"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/txtPhone"
+                android:id="@+id/txtStartDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
-                android:text="Phone"
+                android:text="Start Date"
                 android:textColor="@color/black"
                 android:textSize="14dp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edtPhone"
+                android:id="@+id/edtStartDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                android:hint="Phone"
+                android:hint="Start Date"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txtEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:text="EndDate"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="End Date"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
@@ -116,7 +133,7 @@
                 android:background="@drawable/bg_btn_log_in"
                 android:padding="10dp"
                 android:layout_gravity="center"
-                android:text="Create Account"
+                android:text="Create"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
