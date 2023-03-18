@@ -11,17 +11,23 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.student.manager.R;
+import com.student.manager.dao.StudentDAO;
 import com.student.manager.databinding.ActivityStudentBinding;
+import com.student.manager.model.Student;
 
 public class StudentActivity extends AppCompatActivity {
 
     ActivityStudentBinding binding;
 
+    Student student ;
+    int accountId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityStudentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        accountId = getIntent().getIntExtra("accountId", 0);
+        student = StudentDAO.getStudent(accountId);
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -54,7 +60,7 @@ public class StudentActivity extends AppCompatActivity {
                     case R.id.navigation_profile:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frame_container, new StudentProfileFragment(), "Profile")
+                                .replace(R.id.frame_container, new StudentProfileFragment(student), "Profile")
                                 .commit();
                         break;
                 }
