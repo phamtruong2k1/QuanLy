@@ -92,6 +92,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_btn_log_in"
             android:padding="10dp"
+            android:visibility="gone"
             android:text="Create Acciut"
             android:textColor="@color/white"
             android:textStyle="bold" />

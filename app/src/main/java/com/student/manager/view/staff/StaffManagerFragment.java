@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import com.student.manager.databinding.FragmentStaffManagerBinding;
 import com.student.manager.model.Staff;
+import com.student.manager.view.all.classroom.ShowListClassActivity;
+import com.student.manager.view.all.course.ShowListCourseActivity;
 import com.student.manager.view.all.user.ShowListUserActivity;
 
 public class StaffManagerFragment extends Fragment {
@@ -48,6 +50,24 @@ public class StaffManagerFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(new Intent(requireContext(), ShowListUserActivity.class));
                 intent.putExtra("type_account", "lecturer");
+                startActivity(intent);
+            }
+        });
+
+        binding.btnCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(new Intent(requireContext(), ShowListCourseActivity.class));
+                intent.putExtra("role", "staff");
+                startActivity(intent);
+            }
+        });
+
+        binding.btnClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(new Intent(requireContext(), ShowListClassActivity.class));
+                intent.putExtra("role", "staff");
                 startActivity(intent);
             }
         });

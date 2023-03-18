@@ -3,6 +3,7 @@ package com.student.manager;
 import android.app.Application;
 
 import com.student.manager.dao.AccountDAO;
+import com.student.manager.dao.CourseDAO;
 import com.student.manager.dao.LecturerDAO;
 import com.student.manager.dao.StaffDAO;
 import com.student.manager.dao.StudentDAO;
@@ -24,6 +25,7 @@ public class MyApplication extends Application {
         StudentDAO.init(this);
         LecturerDAO.init(this);
         StaffDAO.init(this);
+        CourseDAO.init(this);
     }
 
 }
