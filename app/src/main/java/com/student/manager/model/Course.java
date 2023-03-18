@@ -57,4 +57,9 @@ public class Course {
     public void setCourse_type_id(int course_type_id) {
         this.course_type_id = course_type_id;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

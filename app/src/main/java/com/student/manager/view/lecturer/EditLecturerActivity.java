@@ -1,4 +1,4 @@
-package com.student.manager.view.admin;
+package com.student.manager.view.lecturer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,24 +12,25 @@ import android.widget.Toast;
 
 import com.student.manager.R;
 import com.student.manager.dao.AccountDAO;
-import com.student.manager.dao.StaffDAO;
-import com.student.manager.databinding.ActivityEditStaffBinding;
-import com.student.manager.model.Staff;
-import com.student.manager.util.DataUtil;
-import com.student.manager.view.all.create.CreateStaffActivity;
+import com.student.manager.dao.LecturerDAO;
+import com.student.manager.databinding.ActivityEditLecturerBinding;
+import com.student.manager.model.Lecturer;
 
-public class EditStaffActivity extends AppCompatActivity {
+public class EditLecturerActivity extends AppCompatActivity {
 
-    ActivityEditStaffBinding binding;
-    int staff_id ;
-    Staff staff;
+    ActivityEditLecturerBinding binding;
+
+    int lecturer_id ;
+    Lecturer lecturer;
     int gender = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityEditStaffBinding.inflate(getLayoutInflater());
+        binding = ActivityEditLecturerBinding.inflate(getLayoutInflater());
+
         setContentView(binding.getRoot());
+
         initData();
         initListener();
     }
@@ -65,26 +66,26 @@ public class EditStaffActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (binding.edtName.getText().toString().trim().equals("")) {
-                    Toast.makeText(EditStaffActivity.this, "Enter Name!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditLecturerActivity.this, "Enter Name!", Toast.LENGTH_SHORT).show();
                 } else if (binding.edtDateOfBirth.getText().toString().trim().equals("")) {
-                    Toast.makeText(EditStaffActivity.this, "Enter Date Of Birth!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditLecturerActivity.this, "Enter Date Of Birth!", Toast.LENGTH_SHORT).show();
                 } else if (binding.edtAddress.getText().toString().trim().equals("")) {
-                    Toast.makeText(EditStaffActivity.this, "Enter Address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditLecturerActivity.this, "Enter Address!", Toast.LENGTH_SHORT).show();
                 } else if (binding.edtPhone.getText().toString().trim().equals("")) {
-                    Toast.makeText(EditStaffActivity.this, "Enter Phone!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditLecturerActivity.this, "Enter Phone!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Staff staffNew = new Staff(
-                            staff.getStaff_id(),
-                            staff.getAccountId(),
+                    Lecturer lecturerNew = new Lecturer(
+                            lecturer.getLecturer_id(),
+                            lecturer.getAccountId(),
                             binding.edtName.getText().toString().trim(),
                             gender,
                             binding.edtDateOfBirth.getText().toString().trim(),
                             binding.edtAddress.getText().toString().trim(),
                             binding.edtPhone.getText().toString().trim(),
-                            staff.getDate_of_join(),
-                            staff.getStatus()
+                            lecturer.getDate_of_join(),
+                            lecturer.getStatus()
                     );
-                    StaffDAO.updateStaff(staffNew);
+                    LecturerDAO.updateLecturer(lecturerNew);
                     finish();
                 }
             }
@@ -92,13 +93,13 @@ public class EditStaffActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        staff_id = getIntent().getIntExtra("staff_id", 0);
-        staff = StaffDAO.getStaffbyId(staff_id);
-        binding.edtName.setText(staff.getName());
-        binding.edtDateOfBirth.setText(staff.getDate_of_birth());
-        binding.edtAddress.setText(staff.getAddress());
-        binding.edtPhone.setText(staff.getPhone_number());
-        gender = staff.getGender();
+        lecturer_id = getIntent().getIntExtra("lecturer_id", 0);
+        lecturer = LecturerDAO.getLecturerById(lecturer_id);
+        binding.edtName.setText(lecturer.getName());
+        binding.edtDateOfBirth.setText(lecturer.getDate_of_birth());
+        binding.edtAddress.setText(lecturer.getAddress());
+        binding.edtPhone.setText(lecturer.getPhone_number());
+        gender = lecturer.getGender();
         if (gender == 1) {
             binding.rdMale.setChecked(true);
         } else  {
@@ -115,8 +116,8 @@ public class EditStaffActivity extends AppCompatActivity {
 
             @Override
             public void onClick(DialogInterface arg0, int arg1) {
-                AccountDAO.deleteAccount(staff.getAccountId());
-                StaffDAO.deleteStaff(staff_id);
+                AccountDAO.deleteAccount(lecturer.getAccountId());
+                LecturerDAO.deleteLecturer(lecturer_id);
                 finish();
             }
         });

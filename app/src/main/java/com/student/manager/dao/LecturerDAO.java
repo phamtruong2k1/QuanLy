@@ -47,6 +47,25 @@ public class LecturerDAO {
         return null;
     }
 
+    public static Lecturer getLecturerById(int accountId) {
+        String query = "SELECT * FROM Lecturer WHERE lecturer_id = " + accountId;
+        Cursor data = dataBase.GetData(query);
+        while (data.moveToNext()){
+            return new Lecturer(
+                    data.getInt(0),
+                    data.getInt(1),
+                    data.getString(2),
+                    data.getInt(3),
+                    data.getString(4),
+                    data.getString(5),
+                    data.getString(6),
+                    data.getString(7),
+                    data.getInt(8)
+            );
+        }
+        return null;
+    }
+
     public static void insertLecturer(Lecturer lecturer) {
         String sql = String.format(
                 "INSERT INTO Lecturer VALUES ( null, %s,'%s', %s,'%s','%s','%s', '%s',%s)",

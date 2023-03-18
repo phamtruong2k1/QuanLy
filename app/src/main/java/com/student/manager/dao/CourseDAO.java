@@ -26,7 +26,7 @@ public class CourseDAO {
 
     public static void insertCourse(Course course) {
         String sql = String.format(
-                "INSERT INTO Course VALUES ( null, '%s', '%s','%s','%s')",
+                "INSERT INTO Course VALUES ( null, '%s', '%s', %s, %s)",
                 course.getName(),
                 course.getDescription(),
                 course.getStart_level(),
@@ -60,6 +60,21 @@ public class CourseDAO {
             ));
         }
         return list;
+    }
+
+    public static Course getCourseById(int id) {
+        String query = "SELECT * FROM Course WHERE course_id="+id;
+        Cursor data = dataBase.GetData(query);
+        while (data.moveToNext()){
+            return new Course(
+                    data.getInt(0),
+                    data.getString(1),
+                    data.getString(2),
+                    data.getInt(3),
+                    data.getInt(4)
+            );
+        }
+        return null;
     }
 
     public static void deleteCourse(int id) {

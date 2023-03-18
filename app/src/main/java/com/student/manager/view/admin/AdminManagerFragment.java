@@ -58,6 +58,8 @@ public class AdminManagerFragment extends Fragment implements ClickStaff {
 
     @Override
     public void clickStaff(Staff staff) {
-
+        Intent intent = new Intent(requireContext(), EditStaffActivity.class);
+        intent.putExtra("staff_id", staff.getStaff_id());
+        startActivity(intent);
     }
 }

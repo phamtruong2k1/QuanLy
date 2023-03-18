@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Create Staff Profile"
+                android:text="Lecturer Profile"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="28dp"
@@ -151,14 +151,26 @@
                 android:textSize="18dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnCreate"
+                android:id="@+id/btnUpdate"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/bg_btn_log_in"
                 android:padding="10dp"
                 android:layout_gravity="center"
-                android:text="Create Account"
+                android:text="Update"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDelete"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_btn_log_in_back"
+                android:padding="10dp"
+                android:text="Delete"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 

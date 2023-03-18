@@ -12,6 +12,8 @@ import com.student.manager.databinding.ActivityShowListUserBinding;
 import com.student.manager.model.Lecturer;
 import com.student.manager.model.Student;
 import com.student.manager.view.all.create.CreateAccountActivity;
+import com.student.manager.view.lecturer.EditLecturerActivity;
+import com.student.manager.view.student.EditStudentActivity;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -66,7 +68,10 @@ public class ShowListUserActivity extends AppCompatActivity {
         adapterStudent = new ManagerStudentAdapter(ShowListUserActivity.this, new ArrayList<>(), new ClickStudent() {
             @Override
             public void clickStudent(Student student) {
-
+                Intent intent = new Intent(new Intent(ShowListUserActivity.this, EditStudentActivity.class));
+                intent.putExtra("type_account", type_account);
+                intent.putExtra("student_id", student.getStudent_id());
+                startActivity(intent);
             }
         });
         binding.rcyList.setAdapter(adapterStudent);
@@ -77,7 +82,10 @@ public class ShowListUserActivity extends AppCompatActivity {
         adapterLecture = new ManagerLecturerAdapter(ShowListUserActivity.this, new ArrayList<>(), new ClickLecturer() {
             @Override
             public void clickLecturer(Lecturer lecturer) {
-
+                Intent intent = new Intent(new Intent(ShowListUserActivity.this, EditLecturerActivity.class));
+                intent.putExtra("type_account", type_account);
+                intent.putExtra("lecturer_id", lecturer.getLecturer_id());
+                startActivity(intent);
             }
         });
         binding.rcyList.setAdapter(adapterLecture);
