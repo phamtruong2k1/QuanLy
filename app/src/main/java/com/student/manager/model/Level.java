@@ -34,4 +34,10 @@ public class Level {
     public void setLevel_id(int level_id) {
         this.level_id = level_id;
     }
+
+    @Override
+    public String toString() {
+        return name;
+
+    }
 }

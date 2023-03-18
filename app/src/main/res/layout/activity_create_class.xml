@@ -26,18 +26,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Create Staff Profile"
+                android:text="Create New Class"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="28dp"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_gravity="center"
-                android:layout_height="100dp"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_marginBottom="20dp"/>
 
             <TextView
                 android:id="@+id/txtName"
@@ -57,39 +50,6 @@
                 android:hint="Name"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/txtGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:text="Gender"
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                android:textStyle="bold" />
-
-            <RadioGroup
-                android:id="@+id/rdgGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:hint="Gender"
-                android:textColor="@color/black"
-                android:textSize="18dp" >
-
-                <RadioButton
-                    android:id="@+id/rdMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Male"/>
-
-                <RadioButton
-                    android:id="@+id/rdFemale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Female"/>
-
-            </RadioGroup>
 
             <TextView
                 android:id="@+id/txtDateOfBirth"

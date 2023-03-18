@@ -8,6 +8,7 @@ import com.student.manager.dao.LecturerDAO;
 import com.student.manager.dao.StaffDAO;
 import com.student.manager.dao.StudentDAO;
 import com.student.manager.database.DatabaseDAO;
+import com.student.manager.util.DataUtil;
 import com.student.manager.util.SaveUtil;
 
 public class MyApplication extends Application {
@@ -21,6 +22,7 @@ public class MyApplication extends Application {
     }
 
     private void initDataDAO() {
+        DataUtil.init();
         AccountDAO.init(this);
         StudentDAO.init(this);
         LecturerDAO.init(this);

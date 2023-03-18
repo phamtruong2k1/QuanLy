@@ -15,6 +15,22 @@
         android:theme="@style/Theme.QuanLy"
         tools:targetApi="31">
         <activity
+            android:name=".view.admin.EditStaffActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.all.course.EditCourseActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.all.course.CreateCoureActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.all.classroom.CreateClassActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".view.all.classroom.ShowListClassActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
